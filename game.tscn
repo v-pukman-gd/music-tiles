@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://note.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game.gd" type="Script" id=1]
+[ext_resource path="res://flow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://music.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.703125, 0.923462, 1, 1, 1, 1, 1, 1 )
@@ -19,6 +21,7 @@ gradient = SubResource( 4 )
 width = 100
 
 [node name="Game" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="Bg" type="Sprite" parent="."]
 position = Vector2( 405.553, 507.858 )
@@ -28,18 +31,6 @@ texture = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Note" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 300 )
-
-[node name="Note2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 180, 635.598 )
-
-[node name="Note3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 360, 942.431 )
-
-[node name="Note4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 540, 445.426 )
 
 [node name="Border" type="Sprite" parent="."]
 material = SubResource( 3 )
@@ -61,3 +52,23 @@ position = Vector2( 540, 542.381 )
 rotation = 1.5708
 scale = Vector2( 13, 4 )
 texture = SubResource( 5 )
+
+[node name="Notes" type="Node2D" parent="."]
+
+[node name="StartLabel" type="Label" parent="."]
+margin_left = -1299.28
+margin_top = 720.562
+margin_right = -628.282
+margin_bottom = 1020.56
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Tap To Start!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flow" parent="." instance=ExtResource( 2 )]
+
+[node name="Music" parent="." instance=ExtResource( 3 )]

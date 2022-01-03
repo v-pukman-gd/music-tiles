@@ -1,4 +1,4 @@
-audio/* filter=lfs diff=lfs merge=lfs -text
+songs/* filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
