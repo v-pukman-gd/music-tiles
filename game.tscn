@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://note.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.703125, 0.923462, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 3
+
+[sub_resource type="Gradient" id=4]
+colors = PoolColorArray( 0.296875, 0.296875, 0.296875, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+width = 100
+
+[node name="Game" type="Node2D"]
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( 405.553, 507.858 )
+rotation = -1.5708
+scale = Vector2( 0.636963, 1798.08 )
+texture = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Note" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 300 )
+
+[node name="Note2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 180, 635.598 )
+
+[node name="Note3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 360, 942.431 )
+
+[node name="Note4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 540, 445.426 )
+
+[node name="Border" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 180, 537.678 )
+rotation = 1.5708
+scale = Vector2( 13, 4 )
+texture = SubResource( 5 )
+
+[node name="Border2" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 360, 525.136 )
+rotation = 1.5708
+scale = Vector2( 13, 4 )
+texture = SubResource( 5 )
+
+[node name="Border3" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 540, 542.381 )
+rotation = 1.5708
+scale = Vector2( 13, 4 )
+texture = SubResource( 5 )
