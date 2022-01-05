@@ -53,9 +53,14 @@ rotation = 1.5708
 scale = Vector2( 13, 4 )
 texture = SubResource( 5 )
 
-[node name="Notes" type="Node2D" parent="."]
+[node name="Border4" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 540, 720 )
+scale = Vector2( 13, 4 )
+texture = SubResource( 5 )
 
 [node name="StartLabel" type="Label" parent="."]
+visible = false
 margin_left = -1299.28
 margin_top = 720.562
 margin_right = -628.282
@@ -70,5 +75,6 @@ __meta__ = {
 }
 
 [node name="Flow" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 720 )
 
 [node name="Music" parent="." instance=ExtResource( 3 )]

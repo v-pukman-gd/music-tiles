@@ -15,9 +15,11 @@ var quarter_time_in_sec
 var speed
 var note_scale
 var start_pos_in_sec
+var start_pos_in_px
+var pre_start_duration_in_m
 
 var data_ready = false
-var game_started = false
+var game_started = true
 
 onready var flow_node = $Flow
 onready var music_node = $Music
@@ -40,6 +42,8 @@ func setup():
 	speed = bar_length_in_m/float(4*quarter_time_in_sec) # each bar has 4 quarters # 
 	note_scale = bar_length_in_m/float(4*400)
 	start_pos_in_sec = (float(map.start_pos)/400.0) * quarter_time_in_sec
+	start_pos_in_px = start_pos_in_sec * speed
+	pre_start_duration_in_m = bar_length_in_m
 	
 	flow_node.setup(self)
 	music_node.setup(self)

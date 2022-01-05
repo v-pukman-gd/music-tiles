@@ -28,7 +28,7 @@ func add_note(line, data):
 		
 	var note = note_scn.instance()
 	note.line = line # 0 1 2 3
-	note.pos = int(data.pos)
+	note.pos = -int(data.pos)
 	note.length = int(data.len)
 	note.length_scale = note_scale
 	#note.speed = speed
