@@ -23,7 +23,8 @@ func _on_ready():
 	$Control.rect_position = Vector2(0, -rect_size.y)
 	$Control/Rect.rect_size = rect_size
 	
-	print($Control.rect_size, "____", $Control.rect_position)
+	#print($Control.rect_size, "____", $Control.rect_position)
+	print("height:", height)
 	
 	$Control.connect("gui_input", self, "_on_control_gui_input")
 		
