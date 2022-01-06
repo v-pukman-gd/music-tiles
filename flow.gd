@@ -14,6 +14,7 @@ var curr_bar_index
 var tracks_data 
 
 var game
+var curr_line = 0
 
 func setup(game):
 	self.game = game
@@ -47,12 +48,15 @@ func add_bar():
 	var bar = bar_scn.instance()
 	bar.position = Vector2(curr_location.x, curr_location.y)
 	bar.note_scale = note_scale
-	bar.bar_data = get_bar_data()
+	bar.bar_data = tracks_data[3].bars[curr_bar_index] #get_bar_data()
+	
+	curr_line = bar.add_notes(curr_line)
 	#bar.speed = speed
 	bars.append(bar)
 	bars_node.add_child(bar)
 	curr_location -= Vector2(0,bar_length_in_m)
 	curr_bar_index += 1
+
 	
 func get_bar_data():
 	var left_data = tracks_data[0].bars[curr_bar_index]

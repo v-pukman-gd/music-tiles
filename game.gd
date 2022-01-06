@@ -7,7 +7,7 @@ extends Node2D
 var audio
 var map
 var audio_file = "res://songs/song1_tchaikovsky/audio.ogg"
-var map_file = "res://songs/song1_tchaikovsky/map.mboy"
+var map_file = "res://songs/song1_tchaikovsky/map2.mboy"
 
 var tempo
 var bar_length_in_m
