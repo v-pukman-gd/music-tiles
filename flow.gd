@@ -53,6 +53,7 @@ func add_bar():
 	var bar = bar_scn.instance()
 	bar.position = Vector2(curr_location.x, curr_location.y)
 	bar.note_scale = note_scale
+	bar.speed = speed
 	bar.bar_data = bars_data[curr_bar_index] #get_bar_data()
 	
 	curr_line = bar.add_notes(curr_line)

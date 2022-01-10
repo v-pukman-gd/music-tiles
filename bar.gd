@@ -2,10 +2,11 @@ extends Node2D
 
 
 var short_note_scn = preload("res://note/short_note.tscn")
-#var long_note_scn = preload("res://note/long_note.tscn")
+var long_note_scn = preload("res://note/long_note.tscn")
 
 var note_scale
-var bar_data 
+var bar_data
+var speed
 
 #var speed
 
@@ -44,16 +45,17 @@ func rand_line():
 		
 func add_note(line, data):
 	var note_scn = short_note_scn
-	#if int(data.len) >= 400:
-	#	note_scn = long_note_scn
-	#else:
-	#	note_scn = short_note_scn
+	if int(data.len) >= 300:
+		note_scn = long_note_scn
+	else:
+		note_scn = short_note_scn
 		
 	var note = note_scn.instance()
 	note.line = line # 0 1 2 3
 	note.pos = -int(data.pos)
 	note.length = int(data.full_len)
 	note.length_scale = note_scale
+	note.speed = speed
 	#note.speed = speed
 	#add_child(note)
 	notes.append(note)

@@ -4,12 +4,15 @@ export(int, 0, 3) var line
 var pos = 600
 var length = 400
 var length_scale = 1
+var speed = 0
 
 var width = 180
 var height = 180
 
 var collected = false
 var rect_size = Vector2()
+
+var pressed = false
 
 func _ready():
 	_on_ready()
@@ -24,16 +27,17 @@ func _on_ready():
 	$Control/Rect.rect_size = rect_size
 	
 	#print($Control.rect_size, "____", $Control.rect_position)
-	print("height:", height)
+	#print("height:", height)
 	
 	$Control.connect("gui_input", self, "_on_control_gui_input")
 		
 func _on_control_gui_input(event):
-	print(event)
+	#print(event)
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
-		if event.pressed and not collected:
-			collected = true
-			_on_collected()
+		pressed = event.pressed
+		#if event.pressed and not collected:
+		#	collected = true
+		#	_on_collected()	
 	
 func _process(delta):
 	_on_process(delta)
@@ -41,8 +45,8 @@ func _process(delta):
 func _on_process(delta):
 	pass
 
-func _on_rect_input(event):
-	print(event)
+#func _on_rect_input(event):
+#	print(event)
 	
 func _on_collected():
 	hide()
